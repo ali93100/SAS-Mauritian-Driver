@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Palette officielle
+   Chinese Black  #0C1519
+   Jet            #3A3534
+   Coffee         #724B39
+   Antique Brass  #CF9D7B
+   ============================================================ */
+
+:root {
+  --chinese-black:   #0C1519;
+  --jet:             #3A3534;
+  --coffee:          #724B39;
+  --antique-brass:   #CF9D7B;
+  --antique-brass-light: #D9B090;
+  --antique-brass-dark:  #B8835B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--chinese-black);
+  color: #F0EAE4;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--chinese-black); }
+::-webkit-scrollbar-thumb {
+  background: var(--jet);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--antique-brass);
+}
+
+/* Sélection */
+::selection {
+  background: rgba(207, 157, 123, 0.2);
+  color: #F0EAE4;
+}
+
+/* ============================================================
+   FullCalendar — thème Chinese Black / Antique Brass
+   ============================================================ */
+.fc {
+  --fc-border-color:           #3A3534;
+  --fc-page-bg-color:          #111E24;
+  --fc-neutral-bg-color:       #162029;
+  --fc-neutral-text-color:     #9A8A80;
+  --fc-today-bg-color:         rgba(207,157,123,0.08);
+  --fc-now-indicator-color:    #CF9D7B;
+  --fc-event-bg-color:         #CF9D7B;
+  --fc-event-border-color:     #CF9D7B;
+  --fc-event-text-color:       #0C1519;
+  --fc-button-bg-color:        #3A3534;
+  --fc-button-border-color:    #4D4847;
+  --fc-button-hover-bg-color:  #4D4847;
+  --fc-button-active-bg-color:     #CF9D7B;
+  --fc-button-active-border-color: #CF9D7B;
+  --fc-button-text-color:      #F0EAE4;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #F0EAE4;
+  text-transform: capitalize;
+  font-family: 'Ranade', 'Inter', sans-serif;
+}
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  color: #9A8A80;
+  text-decoration: none;
+}
+
+.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  color: #CF9D7B;
+  font-weight: 700;
+}
+
+.fc .fc-button {
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.375rem 0.875rem;
+}
+
+.fc-event-available {
+  background-color: rgba(34,197,94,0.12) !important;
+  border-color:     rgba(34,197,94,0.35) !important;
+  color:            #4ade80 !important;
+}
+
+.fc-event-unavailable {
+  background-color: rgba(239,68,68,0.12) !important;
+  border-color:     rgba(239,68,68,0.35) !important;
+  color:            #f87171 !important;
+}
+
+/* Inputs date/time */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(0.3) hue-rotate(340deg);
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
