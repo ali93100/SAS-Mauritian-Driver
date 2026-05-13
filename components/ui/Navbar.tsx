@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from './Button'
+import { Logo } from './Logo'
 
 const links = [
   { href: '/', label: 'Accueil' },
@@ -37,11 +38,9 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
-          {/* Logo — initiale Antique Brass */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold group-hover:shadow-gold-lg transition-all duration-300">
-              <span className="font-display font-bold text-sm text-black-deep">A</span>
-            </div>
+            <Logo size={40} crop className="group-hover:scale-105 transition-transform duration-300" />
             <div>
               <p className="text-stone-100 font-display font-bold text-sm leading-none tracking-wide">
                 Ahmad Abdool Wahed

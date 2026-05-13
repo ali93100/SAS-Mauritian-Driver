@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, CreditCard, Shield, Star, CheckCircle, Calendar, Q
 import { supabase } from '@/lib/supabase'
 import { DriverProfile } from '@/types'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 import Link from 'next/link'
 
 const defaultDriver: DriverProfile = {
@@ -58,8 +59,8 @@ export function DriverProfileCard() {
         <div className="px-8 pb-8">
           {/* Avatar + name */}
           <div className="flex items-end gap-6 -mt-14 mb-8">
-            <div className="w-28 h-28 rounded-2xl bg-gradient-gold shadow-gold-lg flex items-center justify-center border-4 border-black-card shrink-0">
-              <span className="text-4xl font-bold text-black-deep font-display">A</span>
+            <div className="shrink-0 border-4 border-black-card rounded-2xl overflow-hidden">
+              <Logo size={112} />
             </div>
             <div className="pb-2 min-w-0">
               <h2 className="text-white font-display font-bold text-3xl leading-tight">Ahmad</h2>

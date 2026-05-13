@@ -6,6 +6,7 @@ import {
   LayoutDashboard, CalendarDays, Users, BarChart3,
   LogOut, Settings, ChevronRight
 } from 'lucide-react'
+import { Logo } from '@/components/ui/Logo'
 import { useAuthStore } from '@/store/useAuthStore'
 import { useRouter } from 'next/navigation'
 
@@ -33,9 +34,7 @@ export function Sidebar() {
       {/* Logo */}
       <div className="p-6 border-b border-anthracite">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold">
-            <span className="font-display font-bold text-sm text-black-deep">A</span>
-          </div>
+          <Logo size={40} crop />
           <div>
             <p className="text-stone-100 font-display font-bold text-sm leading-none">Ahmad A.W.</p>
             <p className="text-gold text-[10px] tracking-wider mt-0.5">ADMIN PANEL</p>

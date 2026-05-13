@@ -6,14 +6,25 @@ import { Sidebar } from '@/components/dashboard/Sidebar'
 import { useAuthStore } from '@/store/useAuthStore'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const { isAuthenticated, user } = useAuthStore()
+  const { isAuthenticated, user, _hydrated } = useAuthStore()
   const router = useRouter()
 
   useEffect(() => {
+    // On attend que Zustand ait chargé depuis localStorage avant de vérifier
+    if (!_hydrated) return
     if (!isAuthenticated || user?.role !== 'admin') {
       router.push('/login')
     }
-  }, [isAuthenticated, user, router])
+  }, [_hydrated, isAuthenticated, user, router])
+
+  // Spinner pendant la réhydratation
+  if (!_hydrated) {
+    return (
+      <div className="min-h-screen bg-black-deep flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
 
   if (!isAuthenticated) return null
 

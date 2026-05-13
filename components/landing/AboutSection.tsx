@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Quote, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 
 export function AboutSection() {
   return (
@@ -28,9 +29,9 @@ export function AboutSection() {
               <div className="absolute -top-6 -right-6 w-44 h-44 rounded-full border border-gold/8" />
               <div className="absolute -top-2 -right-2 w-28 h-28 rounded-full border border-gold/12" />
 
-              {/* Avatar */}
-              <div className="w-24 h-24 bg-gradient-gold rounded-2xl flex items-center justify-center shadow-gold-lg mb-6 relative z-10">
-                <span className="font-display font-bold text-4xl text-black-deep">A</span>
+              {/* Logo */}
+              <div className="mb-6 relative z-10">
+                <Logo size={110} />
               </div>
 
               <h3 className="font-display font-bold text-stone-100 text-4xl mb-1 relative z-10">Ahmad</h3>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Car, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
+import { Logo } from './Logo'
 
 export function Footer() {
   return (
@@ -9,9 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold">
-                <Car size={20} className="text-black-deep" />
-              </div>
+              <Logo size={44} crop />
               <div>
                 <p className="text-white font-bold tracking-wide">AHMAD ABDOOL WAHED</p>
                 <p className="text-gold text-xs tracking-widest uppercase">Chauffeur VTC · French Riviera</p>
