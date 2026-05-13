@@ -97,4 +97,4 @@ const config: Config = {
   plugins: [],
 }
 
-export default config
+export default config 
